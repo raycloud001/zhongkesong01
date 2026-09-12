@@ -1,0 +1,1733 @@
+{
+  "$defs": {
+    "Action": {
+      "additionalProperties": false,
+      "properties": {
+        "firstStep": {
+          "title": "Firststep",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "methodReferences": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "Methodreferences",
+          "type": "array"
+        },
+        "reason": {
+          "$ref": "#/$defs/Claim"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "completed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "reason",
+        "firstStep",
+        "methodReferences",
+        "status"
+      ],
+      "title": "Action",
+      "type": "object"
+    },
+    "ActionPlanItem": {
+      "additionalProperties": false,
+      "properties": {
+        "actionIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Actionids",
+          "type": "array"
+        },
+        "day": {
+          "enum": [
+            30,
+            60,
+            90
+          ],
+          "title": "Day",
+          "type": "integer"
+        },
+        "deliverable": {
+          "title": "Deliverable",
+          "type": "string"
+        }
+      },
+      "required": [
+        "day",
+        "actionIds",
+        "deliverable"
+      ],
+      "title": "ActionPlanItem",
+      "type": "object"
+    },
+    "ChatReply": {
+      "additionalProperties": false,
+      "properties": {
+        "conclusion": {
+          "$ref": "#/$defs/Claim"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "factCandidates": {
+          "items": {
+            "$ref": "#/$defs/Fact"
+          },
+          "title": "Factcandidates",
+          "type": "array"
+        },
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Facts",
+          "type": "array"
+        },
+        "inferences": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Inferences",
+          "type": "array"
+        },
+        "messageId": {
+          "title": "Messageid",
+          "type": "string"
+        },
+        "recommendations": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Recommendations",
+          "type": "array"
+        },
+        "toValidate": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Tovalidate",
+          "type": "array"
+        }
+      },
+      "required": [
+        "messageId",
+        "conclusion",
+        "facts",
+        "inferences",
+        "recommendations",
+        "toValidate",
+        "factCandidates",
+        "createdAt"
+      ],
+      "title": "ChatReply",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "claimType": {
+          "enum": [
+            "fact",
+            "inference",
+            "recommendation",
+            "to_validate"
+          ],
+          "title": "Claimtype",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "claimType",
+        "references"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Core": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "judgments": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Judgments",
+          "type": "array"
+        },
+        "keySummaries": {
+          "$ref": "#/$defs/KeySummaries"
+        },
+        "radar": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Radar"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "risk": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Claim"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "strengths": {
+          "items": {
+            "$ref": "#/$defs/Strength"
+          },
+          "title": "Strengths",
+          "type": "array"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TypeSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "weaknesses": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Weaknesses",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "keySummaries",
+        "radar",
+        "evidence",
+        "strengths",
+        "weaknesses",
+        "risk",
+        "judgments"
+      ],
+      "title": "Core",
+      "type": "object"
+    },
+    "Decisions": {
+      "additionalProperties": false,
+      "properties": {
+        "actionPlan": {
+          "items": {
+            "$ref": "#/$defs/ActionPlanItem"
+          },
+          "title": "Actionplan",
+          "type": "array"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/$defs/Action"
+          },
+          "maxItems": 3,
+          "title": "Actions",
+          "type": "array"
+        },
+        "alternativeDirection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Claim"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "counterEvidenceConditions": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Counterevidenceconditions",
+          "type": "array"
+        },
+        "explicitTargets": {
+          "items": {
+            "$ref": "#/$defs/JobMatch"
+          },
+          "maxItems": 3,
+          "title": "Explicittargets",
+          "type": "array"
+        },
+        "jobMatches": {
+          "items": {
+            "$ref": "#/$defs/JobMatch"
+          },
+          "maxItems": 3,
+          "title": "Jobmatches",
+          "type": "array"
+        },
+        "preferredDirection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Claim"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "preparationSuggestions": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Preparationsuggestions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "jobMatches",
+        "explicitTargets",
+        "preferredDirection",
+        "alternativeDirection",
+        "actions",
+        "actionPlan",
+        "preparationSuggestions",
+        "counterEvidenceConditions"
+      ],
+      "title": "Decisions",
+      "type": "object"
+    },
+    "Dimension": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "score",
+        "description",
+        "evidenceIds"
+      ],
+      "title": "Dimension",
+      "type": "object"
+    },
+    "ErrorBody": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "details": {
+          "additionalProperties": true,
+          "title": "Details",
+          "type": "object"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "requestId": {
+          "title": "Requestid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "requestId"
+      ],
+      "title": "ErrorBody",
+      "type": "object"
+    },
+    "ErrorEnvelope": {
+      "additionalProperties": false,
+      "properties": {
+        "error": {
+          "$ref": "#/$defs/ErrorBody"
+        }
+      },
+      "required": [
+        "error"
+      ],
+      "title": "ErrorEnvelope",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "answerId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Answerid"
+        },
+        "conflictGroupId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Conflictgroupid"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "questionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Questionid"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "sourceStatus": {
+          "enum": [
+            "verified_result",
+            "confirmed_self_report",
+            "behavior",
+            "preference",
+            "missing",
+            "conflict"
+          ],
+          "title": "Sourcestatus",
+          "type": "string"
+        },
+        "taskIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Taskids",
+          "type": "array"
+        },
+        "verificationSource": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Verificationsource"
+        }
+      },
+      "required": [
+        "id",
+        "questionId",
+        "answerId",
+        "quote",
+        "taskIds",
+        "sourceStatus",
+        "verificationSource",
+        "gaps",
+        "conflictGroupId"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Fact": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "factId": {
+          "title": "Factid",
+          "type": "string"
+        },
+        "sourceMessageId": {
+          "title": "Sourcemessageid",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "confirmed",
+            "rejected",
+            "retracted"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "targetProfileField": {
+          "enum": [
+            "goal",
+            "preference",
+            "experience",
+            "feedback"
+          ],
+          "title": "Targetprofilefield",
+          "type": "string"
+        }
+      },
+      "required": [
+        "factId",
+        "content",
+        "sourceMessageId",
+        "status",
+        "createdAt",
+        "targetProfileField"
+      ],
+      "title": "Fact",
+      "type": "object"
+    },
+    "HardGate": {
+      "additionalProperties": false,
+      "properties": {
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "requirementId": {
+          "title": "Requirementid",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/Reference"
+        },
+        "status": {
+          "enum": [
+            "met",
+            "missing",
+            "unknown",
+            "conflict"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requirementId",
+        "status",
+        "evidenceIds",
+        "source"
+      ],
+      "title": "HardGate",
+      "type": "object"
+    },
+    "IndustryContext": {
+      "additionalProperties": false,
+      "properties": {
+        "asOf": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Asof"
+        },
+        "line": {
+          "$ref": "#/$defs/Claim"
+        },
+        "plane": {
+          "$ref": "#/$defs/Claim"
+        },
+        "point": {
+          "$ref": "#/$defs/Claim"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "system": {
+          "$ref": "#/$defs/Claim"
+        }
+      },
+      "required": [
+        "point",
+        "line",
+        "plane",
+        "system",
+        "asOf",
+        "references"
+      ],
+      "title": "IndustryContext",
+      "type": "object"
+    },
+    "Interpretation": {
+      "additionalProperties": false,
+      "properties": {
+        "aiUsageNotice": {
+          "title": "Aiusagenotice",
+          "type": "string"
+        },
+        "reviewItems": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reviewitems",
+          "type": "array"
+        },
+        "sections": {
+          "items": {
+            "$ref": "#/$defs/InterpretationSection"
+          },
+          "title": "Sections",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sections",
+        "aiUsageNotice",
+        "reviewItems"
+      ],
+      "title": "Interpretation",
+      "type": "object"
+    },
+    "InterpretationSection": {
+      "additionalProperties": false,
+      "properties": {
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "key": {
+          "enum": [
+            "core_judgment",
+            "job_impact",
+            "uncertainty",
+            "validation"
+          ],
+          "title": "Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "claims"
+      ],
+      "title": "InterpretationSection",
+      "type": "object"
+    },
+    "Job": {
+      "additionalProperties": false,
+      "properties": {
+        "attemptCount": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Attemptcount",
+          "type": "integer"
+        },
+        "completedParts": {
+          "items": {
+            "enum": [
+              "core",
+              "decisions",
+              "interpretation"
+            ],
+            "type": "string"
+          },
+          "title": "Completedparts",
+          "type": "array"
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "failedParts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Failedparts",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "reportId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reportid"
+        },
+        "retryable": {
+          "title": "Retryable",
+          "type": "boolean"
+        },
+        "stage": {
+          "enum": [
+            "validate",
+            "score",
+            "retrieve",
+            "generate",
+            "complete"
+          ],
+          "title": "Stage",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "running",
+            "ready",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "stage",
+        "reportId",
+        "completedParts",
+        "failedParts",
+        "retryable",
+        "attemptCount",
+        "errorCode"
+      ],
+      "title": "Job",
+      "type": "object"
+    },
+    "JobMatch": {
+      "additionalProperties": false,
+      "properties": {
+        "eligibility": {
+          "enum": [
+            "current",
+            "explore",
+            "clarify",
+            "exclude"
+          ],
+          "title": "Eligibility",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "evidenceStatus": {
+          "enum": [
+            "supported",
+            "self_report_pending",
+            "transfer_pending",
+            "gap",
+            "unknown",
+            "conflict"
+          ],
+          "title": "Evidencestatus",
+          "type": "string"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "hardGates": {
+          "items": {
+            "$ref": "#/$defs/HardGate"
+          },
+          "title": "Hardgates",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "industryContext": {
+          "$ref": "#/$defs/IndustryContext"
+        },
+        "jobSourceId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Jobsourceid"
+        },
+        "jobVersion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Jobversion"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "reason": {
+          "$ref": "#/$defs/Claim"
+        },
+        "requirementComparisons": {
+          "items": {
+            "$ref": "#/$defs/RequirementComparison"
+          },
+          "title": "Requirementcomparisons",
+          "type": "array"
+        },
+        "risks": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Risks",
+          "type": "array"
+        },
+        "sourceStatus": {
+          "enum": [
+            "verified",
+            "template_provisional",
+            "unknown"
+          ],
+          "title": "Sourcestatus",
+          "type": "string"
+        },
+        "strategyLabel": {
+          "anyOf": [
+            {
+              "enum": [
+                "steady",
+                "stretch",
+                "safe"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Strategylabel"
+        },
+        "strategyStatus": {
+          "enum": [
+            "ready",
+            "pending_method"
+          ],
+          "title": "Strategystatus",
+          "type": "string"
+        },
+        "taskCoverage": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "propertyNames": {
+            "enum": [
+              "behavior",
+              "verified"
+            ]
+          },
+          "title": "Taskcoverage",
+          "type": "object"
+        },
+        "tasks": {
+          "items": {
+            "$ref": "#/$defs/JobTask"
+          },
+          "title": "Tasks",
+          "type": "array"
+        },
+        "transfer": {
+          "$ref": "#/$defs/Transfer"
+        },
+        "validationTask": {
+          "$ref": "#/$defs/Action"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "jobSourceId",
+        "jobVersion",
+        "sourceStatus",
+        "tasks",
+        "eligibility",
+        "strategyLabel",
+        "strategyStatus",
+        "taskCoverage",
+        "evidenceStatus",
+        "requirementComparisons",
+        "hardGates",
+        "transfer",
+        "reason",
+        "evidenceIds",
+        "gaps",
+        "risks",
+        "validationTask",
+        "industryContext"
+      ],
+      "title": "JobMatch",
+      "type": "object"
+    },
+    "JobTask": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "JobTask",
+      "type": "object"
+    },
+    "KeySummaries": {
+      "additionalProperties": false,
+      "properties": {
+        "advantage": {
+          "$ref": "#/$defs/Claim"
+        },
+        "risk": {
+          "$ref": "#/$defs/Claim"
+        },
+        "state": {
+          "$ref": "#/$defs/Claim"
+        }
+      },
+      "required": [
+        "state",
+        "advantage",
+        "risk"
+      ],
+      "title": "KeySummaries",
+      "type": "object"
+    },
+    "Part_Core_": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Core"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "ready",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "data",
+        "errorCode"
+      ],
+      "title": "Part[Core]",
+      "type": "object"
+    },
+    "Part_Decisions_": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Decisions"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "ready",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "data",
+        "errorCode"
+      ],
+      "title": "Part[Decisions]",
+      "type": "object"
+    },
+    "Part_Interpretation_": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interpretation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "ready",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "data",
+        "errorCode"
+      ],
+      "title": "Part[Interpretation]",
+      "type": "object"
+    },
+    "Radar": {
+      "additionalProperties": false,
+      "properties": {
+        "dimensions": {
+          "items": {
+            "$ref": "#/$defs/Dimension"
+          },
+          "maxItems": 8,
+          "minItems": 6,
+          "title": "Dimensions",
+          "type": "array"
+        },
+        "scale": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "const": 0,
+              "type": "integer"
+            },
+            {
+              "const": 100,
+              "type": "integer"
+            }
+          ],
+          "title": "Scale",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dimensions",
+        "scale"
+      ],
+      "title": "Radar",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "source": {
+          "enum": [
+            "answer",
+            "knowledge",
+            "report",
+            "profile",
+            "job_source",
+            "method"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "id",
+        "version"
+      ],
+      "title": "Reference",
+      "type": "object"
+    },
+    "Report": {
+      "additionalProperties": false,
+      "properties": {
+        "assessmentId": {
+          "title": "Assessmentid",
+          "type": "string"
+        },
+        "core": {
+          "$ref": "#/$defs/Part_Core_"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "decisions": {
+          "$ref": "#/$defs/Part_Decisions_"
+        },
+        "demo": {
+          "title": "Demo",
+          "type": "boolean"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "inputHash": {
+          "title": "Inputhash",
+          "type": "string"
+        },
+        "interpretation": {
+          "$ref": "#/$defs/Part_Interpretation_"
+        },
+        "reviewStatus": {
+          "enum": [
+            "pending",
+            "confirmed",
+            "disputed"
+          ],
+          "title": "Reviewstatus",
+          "type": "string"
+        },
+        "sourceVersions": {
+          "$ref": "#/$defs/SourceVersions"
+        },
+        "status": {
+          "enum": [
+            "generating",
+            "partial",
+            "ready",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "tracking": {
+          "$ref": "#/$defs/Tracking"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "assessmentId",
+        "version",
+        "demo",
+        "status",
+        "reviewStatus",
+        "sourceVersions",
+        "inputHash",
+        "createdAt",
+        "core",
+        "decisions",
+        "interpretation",
+        "tracking"
+      ],
+      "title": "Report",
+      "type": "object"
+    },
+    "RequirementComparison": {
+      "additionalProperties": false,
+      "properties": {
+        "capabilityId": {
+          "title": "Capabilityid",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "judgmentStatus": {
+          "enum": [
+            "supported",
+            "self_report_pending",
+            "transfer_pending",
+            "gap",
+            "unknown",
+            "conflict"
+          ],
+          "title": "Judgmentstatus",
+          "type": "string"
+        },
+        "observedLevel": {
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "unknown"
+          ],
+          "title": "Observedlevel",
+          "type": "string"
+        },
+        "requiredLevel": {
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "unknown"
+          ],
+          "title": "Requiredlevel",
+          "type": "string"
+        },
+        "requirementId": {
+          "title": "Requirementid",
+          "type": "string"
+        },
+        "requirementSource": {
+          "$ref": "#/$defs/Reference"
+        },
+        "requirementType": {
+          "enum": [
+            "hard_gate",
+            "core",
+            "bonus"
+          ],
+          "title": "Requirementtype",
+          "type": "string"
+        },
+        "taskId": {
+          "title": "Taskid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requirementId",
+        "taskId",
+        "capabilityId",
+        "requirementType",
+        "requiredLevel",
+        "observedLevel",
+        "judgmentStatus",
+        "evidenceIds",
+        "requirementSource"
+      ],
+      "title": "RequirementComparison",
+      "type": "object"
+    },
+    "Snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "changeReason": {
+          "title": "Changereason",
+          "type": "string"
+        },
+        "confirmedFacts": {
+          "items": {
+            "$ref": "#/$defs/Fact"
+          },
+          "title": "Confirmedfacts",
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "previousId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Previousid"
+        },
+        "reportIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reportids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "previousId",
+        "createdAt",
+        "reportIds",
+        "confirmedFacts",
+        "changeReason"
+      ],
+      "title": "Snapshot",
+      "type": "object"
+    },
+    "SourceVersions": {
+      "additionalProperties": false,
+      "properties": {
+        "embeddingModelVersion": {
+          "title": "Embeddingmodelversion",
+          "type": "string"
+        },
+        "jobTemplateVersion": {
+          "title": "Jobtemplateversion",
+          "type": "string"
+        },
+        "knowledgeIndexVersion": {
+          "title": "Knowledgeindexversion",
+          "type": "string"
+        },
+        "modelName": {
+          "title": "Modelname",
+          "type": "string"
+        },
+        "profileSnapshotId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Profilesnapshotid"
+        },
+        "promptVersion": {
+          "title": "Promptversion",
+          "type": "string"
+        },
+        "questionVersion": {
+          "title": "Questionversion",
+          "type": "string"
+        },
+        "ruleVersion": {
+          "title": "Ruleversion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "questionVersion",
+        "ruleVersion",
+        "jobTemplateVersion",
+        "knowledgeIndexVersion",
+        "promptVersion",
+        "modelName",
+        "embeddingModelVersion",
+        "profileSnapshotId"
+      ],
+      "title": "SourceVersions",
+      "type": "object"
+    },
+    "Strength": {
+      "additionalProperties": false,
+      "properties": {
+        "application": {
+          "title": "Application",
+          "type": "string"
+        },
+        "dimensionId": {
+          "title": "Dimensionid",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        }
+      },
+      "required": [
+        "dimensionId",
+        "score",
+        "evidenceIds",
+        "application"
+      ],
+      "title": "Strength",
+      "type": "object"
+    },
+    "Tracking": {
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/TrackingNode"
+          },
+          "title": "Nodes",
+          "type": "array"
+        },
+        "status": {
+          "const": "preview",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "nodes"
+      ],
+      "title": "Tracking",
+      "type": "object"
+    },
+    "TrackingNode": {
+      "additionalProperties": false,
+      "properties": {
+        "day": {
+          "enum": [
+            7,
+            30,
+            90
+          ],
+          "title": "Day",
+          "type": "integer"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "day",
+        "label"
+      ],
+      "title": "TrackingNode",
+      "type": "object"
+    },
+    "Transfer": {
+      "additionalProperties": false,
+      "properties": {
+        "dimensions": {
+          "items": {
+            "$ref": "#/$defs/TransferDimension"
+          },
+          "title": "Dimensions",
+          "type": "array"
+        },
+        "level": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "provisional": {
+          "title": "Provisional",
+          "type": "boolean"
+        },
+        "reason": {
+          "$ref": "#/$defs/Claim"
+        }
+      },
+      "required": [
+        "level",
+        "provisional",
+        "dimensions",
+        "reason"
+      ],
+      "title": "Transfer",
+      "type": "object"
+    },
+    "TransferDimension": {
+      "additionalProperties": false,
+      "properties": {
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "key": {
+          "enum": [
+            "core_task",
+            "industry_qualification",
+            "hard_skill",
+            "service_chain",
+            "responsibility_environment"
+          ],
+          "title": "Key",
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "requirementIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Requirementids",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "reusable",
+            "validate_in_context",
+            "training_needed",
+            "unknown",
+            "conflict"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "status",
+        "evidenceIds",
+        "requirementIds",
+        "references"
+      ],
+      "title": "TransferDimension",
+      "type": "object"
+    },
+    "TypeSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/Claim"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "summary"
+      ],
+      "title": "TypeSummary",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerAssessmentContracts"
+}

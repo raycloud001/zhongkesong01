@@ -1,0 +1,12 @@
+.venv/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.env
+*.tsbuildinfo
+
+# Local runtime data and agent work products
+*.db
+.superpowers/
+.DS_Store

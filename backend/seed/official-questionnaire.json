@@ -1,0 +1,2335 @@
+{
+  "metadata": {
+    "mode": "evidence_only",
+    "scoringStatus": "pending_method",
+    "sourceSection": "2.2",
+    "sourceSha256": "fbbf8bf0900fcf3befca4994c01cba5df3f97c11be142fe5888b4b89e665f1b3",
+    "synthetic": false
+  },
+  "questions": [
+    {
+      "dimension": "任务能量来源",
+      "evidenceRule": "偏好线索；与Q06、Q11交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "深入研究"
+            },
+            {
+              "id": "B",
+              "label": "创作表达"
+            },
+            {
+              "id": "C",
+              "label": "沟通协调"
+            },
+            {
+              "id": "D",
+              "label": "推进项目"
+            },
+            {
+              "id": "E",
+              "label": "分析数据"
+            },
+            {
+              "id": "F",
+              "label": "快速执行优化"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q01",
+      "options": [
+        {
+          "id": "A",
+          "label": "深入研究"
+        },
+        {
+          "id": "B",
+          "label": "创作表达"
+        },
+        {
+          "id": "C",
+          "label": "沟通协调"
+        },
+        {
+          "id": "D",
+          "label": "推进项目"
+        },
+        {
+          "id": "E",
+          "label": "分析数据"
+        },
+        {
+          "id": "F",
+          "label": "快速执行优化"
+        }
+      ],
+      "reportUse": "稳定偏好候选；岗位场景排序",
+      "required": true,
+      "sourceLine": 66,
+      "sourceText": "过去一年，哪类任务最容易让你进入状态？单选：A深入研究；B创作表达；C沟通协调；D推进项目；E分析数据；F快速执行优化",
+      "text": "过去一年，哪类任务最容易让你进入状态？单选：A深入研究；B创作表达；C沟通协调；D推进项目；E分析数据；F快速执行优化",
+      "type": "single"
+    },
+    {
+      "dimension": "反馈依赖与持续",
+      "evidenceRule": "情境偏好；与Q17、Q20交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "继续拆步推进"
+            },
+            {
+              "id": "B",
+              "label": "换一种方法"
+            },
+            {
+              "id": "C",
+              "label": "找人讨论"
+            },
+            {
+              "id": "D",
+              "label": "停下转做别的事"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q02",
+      "options": [
+        {
+          "id": "A",
+          "label": "继续拆步推进"
+        },
+        {
+          "id": "B",
+          "label": "换一种方法"
+        },
+        {
+          "id": "C",
+          "label": "找人讨论"
+        },
+        {
+          "id": "D",
+          "label": "停下转做别的事"
+        }
+      ],
+      "reportUse": "持续性风险、管理支持需求",
+      "required": true,
+      "sourceLine": 67,
+      "sourceText": "当一件事暂时没有反馈时，你通常先做什么？单选：A继续拆步推进；B换一种方法；C找人讨论；D停下转做别的事",
+      "text": "当一件事暂时没有反馈时，你通常先做什么？单选：A继续拆步推进；B换一种方法；C找人讨论；D停下转做别的事",
+      "type": "single"
+    },
+    {
+      "dimension": "当前状态",
+      "evidenceRule": "状态题，不计稳定特质分",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "方向"
+            },
+            {
+              "id": "B",
+              "label": "表达"
+            },
+            {
+              "id": "C",
+              "label": "能力"
+            },
+            {
+              "id": "D",
+              "label": "收入"
+            },
+            {
+              "id": "E",
+              "label": "环境"
+            },
+            {
+              "id": "F",
+              "label": "稳定性"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q03",
+      "options": [
+        {
+          "id": "A",
+          "label": "方向"
+        },
+        {
+          "id": "B",
+          "label": "表达"
+        },
+        {
+          "id": "C",
+          "label": "能力"
+        },
+        {
+          "id": "D",
+          "label": "收入"
+        },
+        {
+          "id": "E",
+          "label": "环境"
+        },
+        {
+          "id": "F",
+          "label": "稳定性"
+        }
+      ],
+      "reportUse": "报告开头的当前状态卡，不用于排除岗位",
+      "required": true,
+      "sourceLine": 68,
+      "sourceText": "你当前最想改善的部分是什么？单选：A方向；B表达；C能力；D收入；E环境；F稳定性",
+      "text": "你当前最想改善的部分是什么？单选：A方向；B表达；C能力；D收入；E环境；F稳定性",
+      "type": "single"
+    },
+    {
+      "dimension": "动机结构",
+      "evidenceRule": "最多选2；超限为输入校验失败，请用户修正，不判人格不稳定",
+      "fields": [
+        {
+          "id": "choice",
+          "maxSelections": 2,
+          "minSelections": 1,
+          "options": [
+            {
+              "id": "A",
+              "label": "结果"
+            },
+            {
+              "id": "B",
+              "label": "成长"
+            },
+            {
+              "id": "C",
+              "label": "稳定"
+            },
+            {
+              "id": "D",
+              "label": "自主"
+            },
+            {
+              "id": "E",
+              "label": "影响力"
+            },
+            {
+              "id": "F",
+              "label": "关系与归属"
+            }
+          ],
+          "required": true,
+          "type": "multiple"
+        }
+      ],
+      "id": "Q04",
+      "options": [
+        {
+          "id": "A",
+          "label": "结果"
+        },
+        {
+          "id": "B",
+          "label": "成长"
+        },
+        {
+          "id": "C",
+          "label": "稳定"
+        },
+        {
+          "id": "D",
+          "label": "自主"
+        },
+        {
+          "id": "E",
+          "label": "影响力"
+        },
+        {
+          "id": "F",
+          "label": "关系与归属"
+        }
+      ],
+      "reportUse": "动机解释、环境匹配与风险提示",
+      "required": true,
+      "sourceLine": 69,
+      "sourceText": "你更看重工作的哪两项？多选：A结果；B成长；C稳定；D自主；E影响力；F关系与归属",
+      "text": "你更看重工作的哪两项？多选：A结果；B成长；C稳定；D自主；E影响力；F关系与归属",
+      "type": "multiple"
+    },
+    {
+      "dimension": "满意度来源",
+      "evidenceRule": "与Q14、Q29交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "数据结果"
+            },
+            {
+              "id": "B",
+              "label": "专业认可"
+            },
+            {
+              "id": "C",
+              "label": "用户/客户反馈"
+            },
+            {
+              "id": "D",
+              "label": "团队认可"
+            },
+            {
+              "id": "E",
+              "label": "更大自主权"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q05",
+      "options": [
+        {
+          "id": "A",
+          "label": "数据结果"
+        },
+        {
+          "id": "B",
+          "label": "专业认可"
+        },
+        {
+          "id": "C",
+          "label": "用户/客户反馈"
+        },
+        {
+          "id": "D",
+          "label": "团队认可"
+        },
+        {
+          "id": "E",
+          "label": "更大自主权"
+        }
+      ],
+      "reportUse": "激励方式、岗位环境建议",
+      "required": true,
+      "sourceLine": 70,
+      "sourceText": "完成任务后，你最希望获得什么反馈？单选：A数据结果；B专业认可；C用户/客户反馈；D团队认可；E更大自主权",
+      "text": "完成任务后，你最希望获得什么反馈？单选：A数据结果；B专业认可；C用户/客户反馈；D团队认可；E更大自主权",
+      "type": "single"
+    },
+    {
+      "dimension": "任务偏好",
+      "evidenceRule": "强迫选择；与Q01一致则增强证据",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "研究资料并形成结论"
+            },
+            {
+              "id": "B",
+              "label": "产出内容并迭代"
+            },
+            {
+              "id": "C",
+              "label": "访谈和协调需求"
+            },
+            {
+              "id": "D",
+              "label": "拆解计划并跟进"
+            },
+            {
+              "id": "E",
+              "label": "分析数据找规律"
+            },
+            {
+              "id": "F",
+              "label": "执行流程并优化"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q06",
+      "options": [
+        {
+          "id": "A",
+          "label": "研究资料并形成结论"
+        },
+        {
+          "id": "B",
+          "label": "产出内容并迭代"
+        },
+        {
+          "id": "C",
+          "label": "访谈和协调需求"
+        },
+        {
+          "id": "D",
+          "label": "拆解计划并跟进"
+        },
+        {
+          "id": "E",
+          "label": "分析数据找规律"
+        },
+        {
+          "id": "F",
+          "label": "执行流程并优化"
+        }
+      ],
+      "reportUse": "工作方式画像、岗位任务匹配",
+      "required": true,
+      "sourceLine": 71,
+      "sourceText": "以下任务中，你愿意连续做两周的是哪一个？单选：A研究资料并形成结论；B产出内容并迭代；C访谈和协调需求；D拆解计划并跟进；E分析数据找规律；F执行流程并优化",
+      "text": "以下任务中，你愿意连续做两周的是哪一个？单选：A研究资料并形成结论；B产出内容并迭代；C访谈和协调需求；D拆解计划并跟进；E分析数据找规律；F执行流程并优化",
+      "type": "single"
+    },
+    {
+      "dimension": "问题启动方式",
+      "evidenceRule": "情境题；无标准唯一答案，按岗位需要加权",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先问目标和边界"
+            },
+            {
+              "id": "B",
+              "label": "先找案例"
+            },
+            {
+              "id": "C",
+              "label": "先做一个小版本"
+            },
+            {
+              "id": "D",
+              "label": "先列风险"
+            },
+            {
+              "id": "E",
+              "label": "等负责人进一步说明"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q07",
+      "options": [
+        {
+          "id": "A",
+          "label": "先问目标和边界"
+        },
+        {
+          "id": "B",
+          "label": "先找案例"
+        },
+        {
+          "id": "C",
+          "label": "先做一个小版本"
+        },
+        {
+          "id": "D",
+          "label": "先列风险"
+        },
+        {
+          "id": "E",
+          "label": "等负责人进一步说明"
+        }
+      ],
+      "reportUse": "产品/运营/项目/研究任务匹配",
+      "required": true,
+      "sourceLine": 72,
+      "sourceText": "一个项目目标很模糊，你的第一步是？单选：A先问目标和边界；B先找案例；C先做一个小版本；D先列风险；E等负责人进一步说明",
+      "text": "一个项目目标很模糊，你的第一步是？单选：A先问目标和边界；B先找案例；C先做一个小版本；D先列风险；E等负责人进一步说明",
+      "type": "single"
+    },
+    {
+      "dimension": "节奏偏好",
+      "evidenceRule": "偏好线索；与Q18交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "稳定深度"
+            },
+            {
+              "id": "B",
+              "label": "阶段冲刺"
+            },
+            {
+              "id": "C",
+              "label": "高频变化"
+            },
+            {
+              "id": "D",
+              "label": "明确流程"
+            },
+            {
+              "id": "E",
+              "label": "自主安排"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q08",
+      "options": [
+        {
+          "id": "A",
+          "label": "稳定深度"
+        },
+        {
+          "id": "B",
+          "label": "阶段冲刺"
+        },
+        {
+          "id": "C",
+          "label": "高频变化"
+        },
+        {
+          "id": "D",
+          "label": "明确流程"
+        },
+        {
+          "id": "E",
+          "label": "自主安排"
+        }
+      ],
+      "reportUse": "场景适配与环境风险",
+      "required": true,
+      "sourceLine": 73,
+      "sourceText": "你更能接受哪种工作节奏？单选：A稳定深度；B阶段冲刺；C高频变化；D明确流程；E自主安排",
+      "text": "你更能接受哪种工作节奏？单选：A稳定深度；B阶段冲刺；C高频变化；D明确流程；E自主安排",
+      "type": "single"
+    },
+    {
+      "dimension": "负面场景",
+      "evidenceRule": "风险线索；不等于能力低",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "没有结果"
+            },
+            {
+              "id": "B",
+              "label": "沟通成本高"
+            },
+            {
+              "id": "C",
+              "label": "变化太快"
+            },
+            {
+              "id": "D",
+              "label": "细节重复"
+            },
+            {
+              "id": "E",
+              "label": "缺少自主权"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q09",
+      "options": [
+        {
+          "id": "A",
+          "label": "没有结果"
+        },
+        {
+          "id": "B",
+          "label": "沟通成本高"
+        },
+        {
+          "id": "C",
+          "label": "变化太快"
+        },
+        {
+          "id": "D",
+          "label": "细节重复"
+        },
+        {
+          "id": "E",
+          "label": "缺少自主权"
+        }
+      ],
+      "reportUse": "岗位环境风险、管理方式建议",
+      "required": true,
+      "sourceLine": 74,
+      "sourceText": "你更容易失去动力的情况是？单选：A没有结果；B沟通成本高；C变化太快；D细节重复；E缺少自主权",
+      "text": "你更容易失去动力的情况是？单选：A没有结果；B沟通成本高；C变化太快；D细节重复；E缺少自主权",
+      "type": "single"
+    },
+    {
+      "dimension": "取舍策略",
+      "evidenceRule": "强迫选择；与Q04、Q28交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "A"
+            },
+            {
+              "id": "B",
+              "label": "B"
+            },
+            {
+              "id": "C",
+              "label": "先做小任务比较"
+            },
+            {
+              "id": "D",
+              "label": "看薪酬/稳定性再定"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q10",
+      "options": [
+        {
+          "id": "A",
+          "label": "A"
+        },
+        {
+          "id": "B",
+          "label": "B"
+        },
+        {
+          "id": "C",
+          "label": "先做小任务比较"
+        },
+        {
+          "id": "D",
+          "label": "看薪酬/稳定性再定"
+        }
+      ],
+      "reportUse": "冲/稳/保路径偏好",
+      "required": true,
+      "sourceLine": 75,
+      "sourceText": "两个岗位都感兴趣：岗位A任务熟悉但空间小，岗位B任务陌生但成长大，你会先选？单选：A A；B B；C先做小任务比较；D看薪酬/稳定性再定",
+      "text": "两个岗位都感兴趣：岗位A任务熟悉但空间小，岗位B任务陌生但成长大，你会先选？单选：A A；B B；C先做小任务比较；D看薪酬/稳定性再定",
+      "type": "single"
+    },
+    {
+      "dimension": "需求澄清",
+      "evidenceRule": "情境题；与Q21交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "目标人群、指标、时间"
+            },
+            {
+              "id": "B",
+              "label": "预算、竞品、渠道"
+            },
+            {
+              "id": "C",
+              "label": "先做一版内容"
+            },
+            {
+              "id": "D",
+              "label": "先问老板偏好"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q11",
+      "options": [
+        {
+          "id": "A",
+          "label": "目标人群、指标、时间"
+        },
+        {
+          "id": "B",
+          "label": "预算、竞品、渠道"
+        },
+        {
+          "id": "C",
+          "label": "先做一版内容"
+        },
+        {
+          "id": "D",
+          "label": "先问老板偏好"
+        }
+      ],
+      "reportUse": "沟通、产品、市场、运营任务匹配",
+      "required": true,
+      "sourceLine": 76,
+      "sourceText": "需求方只说“把活动效果做起来”，你先问哪一组问题？单选：A目标人群、指标、时间；B预算、竞品、渠道；C先做一版内容；D先问老板偏好",
+      "text": "需求方只说“把活动效果做起来”，你先问哪一组问题？单选：A目标人群、指标、时间；B预算、竞品、渠道；C先做一版内容；D先问老板偏好",
+      "type": "single"
+    },
+    {
+      "dimension": "表达适配",
+      "evidenceRule": "情境题；不按口才评分",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先给结论再举例"
+            },
+            {
+              "id": "B",
+              "label": "从背景讲起"
+            },
+            {
+              "id": "C",
+              "label": "画流程/结构"
+            },
+            {
+              "id": "D",
+              "label": "先确认对方已知信息"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q12",
+      "options": [
+        {
+          "id": "A",
+          "label": "先给结论再举例"
+        },
+        {
+          "id": "B",
+          "label": "从背景讲起"
+        },
+        {
+          "id": "C",
+          "label": "画流程/结构"
+        },
+        {
+          "id": "D",
+          "label": "先确认对方已知信息"
+        }
+      ],
+      "reportUse": "表达方式、协作对象匹配",
+      "required": true,
+      "sourceLine": 77,
+      "sourceText": "你向不熟悉业务的人解释复杂问题时，通常会？单选：A先给结论再举例；B从背景讲起；C画流程/结构；D先确认对方已知信息",
+      "text": "你向不熟悉业务的人解释复杂问题时，通常会？单选：A先给结论再举例；B从背景讲起；C画流程/结构；D先确认对方已知信息",
+      "type": "single"
+    },
+    {
+      "dimension": "协作推进",
+      "evidenceRule": "情境题；与Q17、Q19交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "核对事实、节点和依赖"
+            },
+            {
+              "id": "B",
+              "label": "先安抚相关人员"
+            },
+            {
+              "id": "C",
+              "label": "重新分配任务"
+            },
+            {
+              "id": "D",
+              "label": "先完成自己部分"
+            },
+            {
+              "id": "E",
+              "label": "等负责人决定"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q13",
+      "options": [
+        {
+          "id": "A",
+          "label": "核对事实、节点和依赖"
+        },
+        {
+          "id": "B",
+          "label": "先安抚相关人员"
+        },
+        {
+          "id": "C",
+          "label": "重新分配任务"
+        },
+        {
+          "id": "D",
+          "label": "先完成自己部分"
+        },
+        {
+          "id": "E",
+          "label": "等负责人决定"
+        }
+      ],
+      "reportUse": "项目推进、客户成功、运营任务",
+      "required": true,
+      "sourceLine": 78,
+      "sourceText": "项目延期且责任不清，你先做什么？单选：A核对事实、节点和依赖；B先安抚相关人员；C重新分配任务；D先完成自己部分；E等负责人决定",
+      "text": "项目延期且责任不清，你先做什么？单选：A核对事实、节点和依赖；B先安抚相关人员；C重新分配任务；D先完成自己部分；E等负责人决定",
+      "type": "single"
+    },
+    {
+      "dimension": "倾听与确认",
+      "evidenceRule": "情境线索；与Q11联合解释沟通方式，不凭组合直接判能力低",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "复述冲突点并让对方确认"
+            },
+            {
+              "id": "B",
+              "label": "按最新一句执行"
+            },
+            {
+              "id": "C",
+              "label": "按自己理解做"
+            },
+            {
+              "id": "D",
+              "label": "暂缓等待"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q14",
+      "options": [
+        {
+          "id": "A",
+          "label": "复述冲突点并让对方确认"
+        },
+        {
+          "id": "B",
+          "label": "按最新一句执行"
+        },
+        {
+          "id": "C",
+          "label": "按自己理解做"
+        },
+        {
+          "id": "D",
+          "label": "暂缓等待"
+        }
+      ],
+      "reportUse": "需求理解与沟通风险",
+      "required": true,
+      "sourceLine": 79,
+      "sourceText": "对方提出的要求前后矛盾，你会？单选：A复述冲突点并让对方确认；B按最新一句执行；C按自己理解做；D暂缓等待",
+      "text": "对方提出的要求前后矛盾，你会？单选：A复述冲突点并让对方确认；B按最新一句执行；C按自己理解做；D暂缓等待",
+      "type": "single"
+    },
+    {
+      "dimension": "行为证据",
+      "evidenceRule": "行为录入；选择E不扣分，证据等级下降",
+      "fields": [
+        {
+          "id": "choice",
+          "maxSelections": 5,
+          "minSelections": 1,
+          "options": [
+            {
+              "id": "A",
+              "label": "跨团队项目"
+            },
+            {
+              "id": "B",
+              "label": "客户/用户沟通"
+            },
+            {
+              "id": "C",
+              "label": "内容/方案共创"
+            },
+            {
+              "id": "D",
+              "label": "数据或流程协作"
+            },
+            {
+              "id": "E",
+              "label": "暂无"
+            }
+          ],
+          "required": true,
+          "type": "multiple"
+        }
+      ],
+      "id": "Q15",
+      "options": [
+        {
+          "id": "A",
+          "label": "跨团队项目"
+        },
+        {
+          "id": "B",
+          "label": "客户/用户沟通"
+        },
+        {
+          "id": "C",
+          "label": "内容/方案共创"
+        },
+        {
+          "id": "D",
+          "label": "数据或流程协作"
+        },
+        {
+          "id": "E",
+          "label": "暂无"
+        }
+      ],
+      "reportUse": "已有协作证据、岗位进入门槛",
+      "required": true,
+      "sourceLine": 80,
+      "sourceText": "过去半年你实际完成过哪类协作？多选：A跨团队项目；B客户/用户沟通；C内容/方案共创；D数据或流程协作；E暂无",
+      "text": "过去半年你实际完成过哪类协作？多选：A跨团队项目；B客户/用户沟通；C内容/方案共创；D数据或流程协作；E暂无",
+      "type": "multiple"
+    },
+    {
+      "dimension": "反馈与冲突",
+      "evidenceRule": "情境题；与Q29交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "追问分歧依据"
+            },
+            {
+              "id": "B",
+              "label": "补充数据"
+            },
+            {
+              "id": "C",
+              "label": "先试小版本"
+            },
+            {
+              "id": "D",
+              "label": "坚持原方案"
+            },
+            {
+              "id": "E",
+              "label": "暂时让步"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q16",
+      "options": [
+        {
+          "id": "A",
+          "label": "追问分歧依据"
+        },
+        {
+          "id": "B",
+          "label": "补充数据"
+        },
+        {
+          "id": "C",
+          "label": "先试小版本"
+        },
+        {
+          "id": "D",
+          "label": "坚持原方案"
+        },
+        {
+          "id": "E",
+          "label": "暂时让步"
+        }
+      ],
+      "reportUse": "反馈修正、协作风险",
+      "required": true,
+      "sourceLine": 81,
+      "sourceText": "当别人不同意你的方案，你最可能先做什么？单选：A追问分歧依据；B补充数据；C先试小版本；D坚持原方案；E暂时让步",
+      "text": "当别人不同意你的方案，你最可能先做什么？单选：A追问分歧依据；B补充数据；C先试小版本；D坚持原方案；E暂时让步",
+      "type": "single"
+    },
+    {
+      "dimension": "任务拆解",
+      "evidenceRule": "情境题；与Q20交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "拆里程碑和验收标准"
+            },
+            {
+              "id": "B",
+              "label": "先做最难部分"
+            },
+            {
+              "id": "C",
+              "label": "先搜集资料"
+            },
+            {
+              "id": "D",
+              "label": "先找人分工"
+            },
+            {
+              "id": "E",
+              "label": "边做边调整"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q17",
+      "options": [
+        {
+          "id": "A",
+          "label": "拆里程碑和验收标准"
+        },
+        {
+          "id": "B",
+          "label": "先做最难部分"
+        },
+        {
+          "id": "C",
+          "label": "先搜集资料"
+        },
+        {
+          "id": "D",
+          "label": "先找人分工"
+        },
+        {
+          "id": "E",
+          "label": "边做边调整"
+        }
+      ],
+      "reportUse": "项目推进、执行可靠性",
+      "required": true,
+      "sourceLine": 82,
+      "sourceText": "一个大目标交付期为30天，你通常如何开始？单选：A拆里程碑和验收标准；B先做最难部分；C先搜集资料；D先找人分工；E边做边调整",
+      "text": "一个大目标交付期为30天，你通常如何开始？单选：A拆里程碑和验收标准；B先做最难部分；C先搜集资料；D先找人分工；E边做边调整",
+      "type": "single"
+    },
+    {
+      "dimension": "多线程管理",
+      "evidenceRule": "情境题；选E不直接等同高执行",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "按影响和截止时间排序"
+            },
+            {
+              "id": "B",
+              "label": "先做最熟悉的"
+            },
+            {
+              "id": "C",
+              "label": "同时推进一点"
+            },
+            {
+              "id": "D",
+              "label": "先等别人确认依赖"
+            },
+            {
+              "id": "E",
+              "label": "加班全部完成"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q18",
+      "options": [
+        {
+          "id": "A",
+          "label": "按影响和截止时间排序"
+        },
+        {
+          "id": "B",
+          "label": "先做最熟悉的"
+        },
+        {
+          "id": "C",
+          "label": "同时推进一点"
+        },
+        {
+          "id": "D",
+          "label": "先等别人确认依赖"
+        },
+        {
+          "id": "E",
+          "label": "加班全部完成"
+        }
+      ],
+      "reportUse": "运营、项目管理、交付风险",
+      "required": true,
+      "sourceLine": 83,
+      "sourceText": "同时有三项任务临近截止，你会？单选：A按影响和截止时间排序；B先做最熟悉的；C同时推进一点；D先等别人确认依赖；E加班全部完成",
+      "text": "同时有三项任务临近截止，你会？单选：A按影响和截止时间排序；B先做最熟悉的；C同时推进一点；D先等别人确认依赖；E加班全部完成",
+      "type": "single"
+    },
+    {
+      "dimension": "收尾能力",
+      "evidenceRule": "自评；与结构化经历交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "稳定完成"
+            },
+            {
+              "id": "B",
+              "label": "容易拖延"
+            },
+            {
+              "id": "C",
+              "label": "需要外部节点"
+            },
+            {
+              "id": "D",
+              "label": "会主动优化流程"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q19",
+      "options": [
+        {
+          "id": "A",
+          "label": "稳定完成"
+        },
+        {
+          "id": "B",
+          "label": "容易拖延"
+        },
+        {
+          "id": "C",
+          "label": "需要外部节点"
+        },
+        {
+          "id": "D",
+          "label": "会主动优化流程"
+        }
+      ],
+      "reportUse": "交付稳定性、岗位环境建议",
+      "required": true,
+      "sourceLine": 84,
+      "sourceText": "任务进入重复、细节和收尾阶段时，你的状态？单选：A稳定完成；B容易拖延；C需要外部节点；D会主动优化流程",
+      "text": "任务进入重复、细节和收尾阶段时，你的状态？单选：A稳定完成；B容易拖延；C需要外部节点；D会主动优化流程",
+      "type": "single"
+    },
+    {
+      "dimension": "持续行为证据",
+      "evidenceRule": "行为证据；A/B需进入Q37经历题",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "有且有结果"
+            },
+            {
+              "id": "B",
+              "label": "有但中途调整"
+            },
+            {
+              "id": "C",
+              "label": "开始过但未完成"
+            },
+            {
+              "id": "D",
+              "label": "暂无"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q20",
+      "options": [
+        {
+          "id": "A",
+          "label": "有且有结果"
+        },
+        {
+          "id": "B",
+          "label": "有但中途调整"
+        },
+        {
+          "id": "C",
+          "label": "开始过但未完成"
+        },
+        {
+          "id": "D",
+          "label": "暂无"
+        }
+      ],
+      "reportUse": "区分潜力与已证明交付",
+      "required": true,
+      "sourceLine": 85,
+      "sourceText": "过去一年，你是否把一个计划持续推进超过一个月？单选：A有且有结果；B有但中途调整；C开始过但未完成；D暂无",
+      "text": "过去一年，你是否把一个计划持续推进超过一个月？单选：A有且有结果；B有但中途调整；C开始过但未完成；D暂无",
+      "type": "single"
+    },
+    {
+      "dimension": "问题定义",
+      "evidenceRule": "情境题；按岗位目标加权",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "目标和指标定义"
+            },
+            {
+              "id": "B",
+              "label": "数据趋势与分群"
+            },
+            {
+              "id": "C",
+              "label": "内容/产品变化"
+            },
+            {
+              "id": "D",
+              "label": "竞争与外部环境"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q21",
+      "options": [
+        {
+          "id": "A",
+          "label": "目标和指标定义"
+        },
+        {
+          "id": "B",
+          "label": "数据趋势与分群"
+        },
+        {
+          "id": "C",
+          "label": "内容/产品变化"
+        },
+        {
+          "id": "D",
+          "label": "竞争与外部环境"
+        }
+      ],
+      "reportUse": "产品、策略、运营、市场分析",
+      "required": true,
+      "sourceLine": 86,
+      "sourceText": "用户说“最近效果不好”，你第一步会查什么？单选：A目标和指标定义；B数据趋势与分群；C内容/产品变化；D竞争与外部环境",
+      "text": "用户说“最近效果不好”，你第一步会查什么？单选：A目标和指标定义；B数据趋势与分群；C内容/产品变化；D竞争与外部环境",
+      "type": "single"
+    },
+    {
+      "dimension": "数据观察",
+      "evidenceRule": "偏好/情境；不直接判数据能力",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "总量"
+            },
+            {
+              "id": "B",
+              "label": "趋势"
+            },
+            {
+              "id": "C",
+              "label": "转化率"
+            },
+            {
+              "id": "D",
+              "label": "用户结构"
+            },
+            {
+              "id": "E",
+              "label": "成本"
+            },
+            {
+              "id": "F",
+              "label": "异常点"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q22",
+      "options": [
+        {
+          "id": "A",
+          "label": "总量"
+        },
+        {
+          "id": "B",
+          "label": "趋势"
+        },
+        {
+          "id": "C",
+          "label": "转化率"
+        },
+        {
+          "id": "D",
+          "label": "用户结构"
+        },
+        {
+          "id": "E",
+          "label": "成本"
+        },
+        {
+          "id": "F",
+          "label": "异常点"
+        }
+      ],
+      "reportUse": "数据工作偏好、分析任务匹配",
+      "required": true,
+      "sourceLine": 87,
+      "sourceText": "看到业务数据，你先关注？单选：A总量；B趋势；C转化率；D用户结构；E成本；F异常点",
+      "text": "看到业务数据，你先关注？单选：A总量；B趋势；C转化率；D用户结构；E成本；F异常点",
+      "type": "single"
+    },
+    {
+      "dimension": "假设意识",
+      "evidenceRule": "情境题；A/C证据较强，B标记验证需求",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先核对数据口径"
+            },
+            {
+              "id": "B",
+              "label": "相信经验"
+            },
+            {
+              "id": "C",
+              "label": "做小实验"
+            },
+            {
+              "id": "D",
+              "label": "请教专家"
+            },
+            {
+              "id": "E",
+              "label": "暂不判断"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q23",
+      "options": [
+        {
+          "id": "A",
+          "label": "先核对数据口径"
+        },
+        {
+          "id": "B",
+          "label": "相信经验"
+        },
+        {
+          "id": "C",
+          "label": "做小实验"
+        },
+        {
+          "id": "D",
+          "label": "请教专家"
+        },
+        {
+          "id": "E",
+          "label": "暂不判断"
+        }
+      ],
+      "reportUse": "分析、实验、决策风险",
+      "required": true,
+      "sourceLine": 88,
+      "sourceText": "数据和直觉冲突时，你通常？单选：A先核对数据口径；B相信经验；C做小实验；D请教专家；E暂不判断",
+      "text": "数据和直觉冲突时，你通常？单选：A先核对数据口径；B相信经验；C做小实验；D请教专家；E暂不判断",
+      "type": "single"
+    },
+    {
+      "dimension": "不确定性处理",
+      "evidenceRule": "情境题；与Q07交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "列关键假设"
+            },
+            {
+              "id": "B",
+              "label": "等更多信息"
+            },
+            {
+              "id": "C",
+              "label": "按经验先做"
+            },
+            {
+              "id": "D",
+              "label": "让负责人决定"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q24",
+      "options": [
+        {
+          "id": "A",
+          "label": "列关键假设"
+        },
+        {
+          "id": "B",
+          "label": "等更多信息"
+        },
+        {
+          "id": "C",
+          "label": "按经验先做"
+        },
+        {
+          "id": "D",
+          "label": "让负责人决定"
+        }
+      ],
+      "reportUse": "创业/运营/产品环境适配",
+      "required": true,
+      "sourceLine": 89,
+      "sourceText": "你需要在信息不完整时做决定，会？单选：A列关键假设；B等更多信息；C按经验先做；D让负责人决定",
+      "text": "你需要在信息不完整时做决定，会？单选：A列关键假设；B等更多信息；C按经验先做；D让负责人决定",
+      "type": "single"
+    },
+    {
+      "dimension": "工作盲点",
+      "evidenceRule": "结构化短答；用于风险，不计人格分",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "定义问题"
+            },
+            {
+              "id": "B",
+              "label": "收集信息"
+            },
+            {
+              "id": "C",
+              "label": "提出方案"
+            },
+            {
+              "id": "D",
+              "label": "验证结果"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        },
+        {
+          "id": "reason",
+          "maxLength": 20,
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "id": "Q25",
+      "options": [
+        {
+          "id": "A",
+          "label": "定义问题"
+        },
+        {
+          "id": "B",
+          "label": "收集信息"
+        },
+        {
+          "id": "C",
+          "label": "提出方案"
+        },
+        {
+          "id": "D",
+          "label": "验证结果"
+        }
+      ],
+      "reportUse": "报告风险卡、验证任务生成",
+      "required": true,
+      "sourceLine": 90,
+      "sourceText": "请从“定义问题—收集信息—提出方案—验证结果”中选出你最常跳过的一步，并说明原因（单选+20字以内）",
+      "text": "请从“定义问题—收集信息—提出方案—验证结果”中选出你最常跳过的一步，并说明原因（单选+20字以内）",
+      "type": "compound"
+    },
+    {
+      "dimension": "学习应用",
+      "evidenceRule": "情境偏好；与Q28交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "立即用在真实任务"
+            },
+            {
+              "id": "B",
+              "label": "先完整看教程"
+            },
+            {
+              "id": "C",
+              "label": "找人带着做"
+            },
+            {
+              "id": "D",
+              "label": "只在需要时临时查"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q26",
+      "options": [
+        {
+          "id": "A",
+          "label": "立即用在真实任务"
+        },
+        {
+          "id": "B",
+          "label": "先完整看教程"
+        },
+        {
+          "id": "C",
+          "label": "找人带着做"
+        },
+        {
+          "id": "D",
+          "label": "只在需要时临时查"
+        }
+      ],
+      "reportUse": "学习迁移、培训需求",
+      "required": true,
+      "sourceLine": 91,
+      "sourceText": "学会一个新工具后，你通常？单选：A立即用在真实任务；B先完整看教程；C找人带着做；D只在需要时临时查",
+      "text": "学会一个新工具后，你通常？单选：A立即用在真实任务；B先完整看教程；C找人带着做；D只在需要时临时查",
+      "type": "single"
+    },
+    {
+      "dimension": "迁移行为证据",
+      "evidenceRule": "迁移自述线索；A/B通过Q37或档案补证；Q38现为目标题，不能作为迁移经历核验",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "多次且有结果"
+            },
+            {
+              "id": "B",
+              "label": "做过但结果一般"
+            },
+            {
+              "id": "C",
+              "label": "想过未实践"
+            },
+            {
+              "id": "D",
+              "label": "没有"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q27",
+      "options": [
+        {
+          "id": "A",
+          "label": "多次且有结果"
+        },
+        {
+          "id": "B",
+          "label": "做过但结果一般"
+        },
+        {
+          "id": "C",
+          "label": "想过未实践"
+        },
+        {
+          "id": "D",
+          "label": "没有"
+        }
+      ],
+      "reportUse": "潜在适配度与可补牌能力",
+      "required": true,
+      "sourceLine": 92,
+      "sourceText": "你是否把一个领域的方法迁移到另一个任务？单选：A多次且有结果；B做过但结果一般；C想过未实践；D没有",
+      "text": "你是否把一个领域的方法迁移到另一个任务？单选：A多次且有结果；B做过但结果一般；C想过未实践；D没有",
+      "type": "single"
+    },
+    {
+      "dimension": "独立解决",
+      "evidenceRule": "情境题；与Q26交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "拆问题并查资料"
+            },
+            {
+              "id": "B",
+              "label": "找有经验的人"
+            },
+            {
+              "id": "C",
+              "label": "先做小实验"
+            },
+            {
+              "id": "D",
+              "label": "等待培训/明确指令"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q28",
+      "options": [
+        {
+          "id": "A",
+          "label": "拆问题并查资料"
+        },
+        {
+          "id": "B",
+          "label": "找有经验的人"
+        },
+        {
+          "id": "C",
+          "label": "先做小实验"
+        },
+        {
+          "id": "D",
+          "label": "等待培训/明确指令"
+        }
+      ],
+      "reportUse": "入门岗位、成长路径与支持需求",
+      "required": true,
+      "sourceLine": 93,
+      "sourceText": "遇到不会的事情，你第一反应？单选：A拆问题并查资料；B找有经验的人；C先做小实验；D等待培训/明确指令",
+      "text": "遇到不会的事情，你第一反应？单选：A拆问题并查资料；B找有经验的人；C先做小实验；D等待培训/明确指令",
+      "type": "single"
+    },
+    {
+      "dimension": "反馈修正",
+      "evidenceRule": "情境题；与Q16交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先确认问题是否成立"
+            },
+            {
+              "id": "B",
+              "label": "马上修改"
+            },
+            {
+              "id": "C",
+              "label": "解释原本考虑"
+            },
+            {
+              "id": "D",
+              "label": "暂时搁置"
+            },
+            {
+              "id": "E",
+              "label": "寻找更多反馈"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q29",
+      "options": [
+        {
+          "id": "A",
+          "label": "先确认问题是否成立"
+        },
+        {
+          "id": "B",
+          "label": "马上修改"
+        },
+        {
+          "id": "C",
+          "label": "解释原本考虑"
+        },
+        {
+          "id": "D",
+          "label": "暂时搁置"
+        },
+        {
+          "id": "E",
+          "label": "寻找更多反馈"
+        }
+      ],
+      "reportUse": "迭代能力、团队协作风险",
+      "required": true,
+      "sourceLine": 94,
+      "sourceText": "别人指出你的方案有问题，你通常？单选：A先确认问题是否成立；B马上修改；C解释原本考虑；D暂时搁置；E寻找更多反馈",
+      "text": "别人指出你的方案有问题，你通常？单选：A先确认问题是否成立；B马上修改；C解释原本考虑；D暂时搁置；E寻找更多反馈",
+      "type": "single"
+    },
+    {
+      "dimension": "硬技能证据",
+      "evidenceRule": "独立程度1—4为原题自述；无完整锚点时不得自动映射L0—L3；工具名称不证明能力",
+      "fields": [
+        {
+          "id": "name",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "frequency",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "typicalTask",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "independence",
+          "max": 4,
+          "min": 1,
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "id": "Q30",
+      "options": [],
+      "reportUse": "JD硬技能匹配、差距清单",
+      "required": true,
+      "sourceLine": 95,
+      "sourceText": "请填写一项你能独立完成的工具/方法：名称、使用频率、典型任务、独立程度（1—4级）",
+      "text": "请填写一项你能独立完成的工具/方法：名称、使用频率、典型任务、独立程度（1—4级）",
+      "type": "compound"
+    },
+    {
+      "dimension": "结果证据",
+      "evidenceRule": "结构化录入；结果缺失则标“待补证”",
+      "fields": [
+        {
+          "id": "work",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "action",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "result",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "id": "time",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "id": "Q31",
+      "options": [],
+      "reportUse": "当前适配度核心加权证据",
+      "required": true,
+      "sourceLine": 96,
+      "sourceText": "请填写一个可核验结果：作品/项目链接或描述、你的动作、结果数据/他人反馈、时间",
+      "text": "请填写一个可核验结果：作品/项目链接或描述、你的动作、结果数据/他人反馈、时间",
+      "type": "compound"
+    },
+    {
+      "dimension": "问题定义与上下文",
+      "evidenceRule": "情境题；与Q33交叉",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "只给一句目标"
+            },
+            {
+              "id": "B",
+              "label": "补充背景、对象和约束"
+            },
+            {
+              "id": "C",
+              "label": "先让AI自由发挥"
+            },
+            {
+              "id": "D",
+              "label": "让AI自己找资料"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q32",
+      "options": [
+        {
+          "id": "A",
+          "label": "只给一句目标"
+        },
+        {
+          "id": "B",
+          "label": "补充背景、对象和约束"
+        },
+        {
+          "id": "C",
+          "label": "先让AI自由发挥"
+        },
+        {
+          "id": "D",
+          "label": "让AI自己找资料"
+        }
+      ],
+      "reportUse": "人—AI协作基础",
+      "required": true,
+      "sourceLine": 97,
+      "sourceText": "你让AI协助完成任务前，会先提供什么？单选：A只给一句目标；B补充背景、对象和约束；C先让AI自由发挥；D让AI自己找资料",
+      "text": "你让AI协助完成任务前，会先提供什么？单选：A只给一句目标；B补充背景、对象和约束；C先让AI自由发挥；D让AI自己找资料",
+      "type": "single"
+    },
+    {
+      "dimension": "输出验证",
+      "evidenceRule": "情境题；选A/C标责任风险",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "直接使用"
+            },
+            {
+              "id": "B",
+              "label": "核对来源和关键事实"
+            },
+            {
+              "id": "C",
+              "label": "只改措辞"
+            },
+            {
+              "id": "D",
+              "label": "让AI再写一遍"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q33",
+      "options": [
+        {
+          "id": "A",
+          "label": "直接使用"
+        },
+        {
+          "id": "B",
+          "label": "核对来源和关键事实"
+        },
+        {
+          "id": "C",
+          "label": "只改措辞"
+        },
+        {
+          "id": "D",
+          "label": "让AI再写一遍"
+        }
+      ],
+      "reportUse": "AI协作、事实核验",
+      "required": true,
+      "sourceLine": 98,
+      "sourceText": "AI给出一份看似完整但没有来源的分析，你会？单选：A直接使用；B核对来源和关键事实；C只改措辞；D让AI再写一遍",
+      "text": "AI给出一份看似完整但没有来源的分析，你会？单选：A直接使用；B核对来源和关键事实；C只改措辞；D让AI再写一遍",
+      "type": "single"
+    },
+    {
+      "dimension": "责任边界",
+      "evidenceRule": "最多选2；选择E需结合Q33验证",
+      "fields": [
+        {
+          "id": "choice",
+          "maxSelections": 2,
+          "minSelections": 1,
+          "options": [
+            {
+              "id": "A",
+              "label": "信息整理"
+            },
+            {
+              "id": "B",
+              "label": "初步发散"
+            },
+            {
+              "id": "C",
+              "label": "数据分析"
+            },
+            {
+              "id": "D",
+              "label": "方案初稿"
+            },
+            {
+              "id": "E",
+              "label": "最终判断"
+            }
+          ],
+          "required": true,
+          "type": "multiple"
+        }
+      ],
+      "id": "Q34",
+      "options": [
+        {
+          "id": "A",
+          "label": "信息整理"
+        },
+        {
+          "id": "B",
+          "label": "初步发散"
+        },
+        {
+          "id": "C",
+          "label": "数据分析"
+        },
+        {
+          "id": "D",
+          "label": "方案初稿"
+        },
+        {
+          "id": "E",
+          "label": "最终判断"
+        }
+      ],
+      "reportUse": "岗位AI协作边界",
+      "required": true,
+      "sourceLine": 99,
+      "sourceText": "你更愿意让AI负责哪两项？多选：A信息整理；B初步发散；C数据分析；D方案初稿；E最终判断",
+      "text": "你更愿意让AI负责哪两项？多选：A信息整理；B初步发散；C数据分析；D方案初稿；E最终判断",
+      "type": "multiple"
+    },
+    {
+      "dimension": "风险判断",
+      "evidenceRule": "情境题；C为关键证据",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "格式整理"
+            },
+            {
+              "id": "B",
+              "label": "重复信息归纳"
+            },
+            {
+              "id": "C",
+              "label": "涉及客户承诺/风险/资源分配"
+            },
+            {
+              "id": "D",
+              "label": "生成多个标题"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q35",
+      "options": [
+        {
+          "id": "A",
+          "label": "格式整理"
+        },
+        {
+          "id": "B",
+          "label": "重复信息归纳"
+        },
+        {
+          "id": "C",
+          "label": "涉及客户承诺/风险/资源分配"
+        },
+        {
+          "id": "D",
+          "label": "生成多个标题"
+        }
+      ],
+      "reportUse": "管理、产品、客户、运营岗位风险",
+      "required": true,
+      "sourceLine": 100,
+      "sourceText": "下面哪种情况最需要人工保留最终判断？单选：A格式整理；B重复信息归纳；C涉及客户承诺/风险/资源分配；D生成多个标题",
+      "text": "下面哪种情况最需要人工保留最终判断？单选：A格式整理；B重复信息归纳；C涉及客户承诺/风险/资源分配；D生成多个标题",
+      "type": "single"
+    },
+    {
+      "dimension": "强迫选择",
+      "evidenceRule": "任务条件校准；C的条件用于解释场景差异，不凭切换判不稳定",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先快速产出再迭代"
+            },
+            {
+              "id": "B",
+              "label": "先充分研究再产出"
+            },
+            {
+              "id": "C",
+              "label": "视任务而定并说明条件"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        },
+        {
+          "condition": {
+            "equals": "C",
+            "field": "choice"
+          },
+          "id": "reason",
+          "required": false,
+          "requiredWhenCondition": true,
+          "type": "text"
+        }
+      ],
+      "id": "Q36",
+      "options": [
+        {
+          "id": "A",
+          "label": "先快速产出再迭代"
+        },
+        {
+          "id": "B",
+          "label": "先充分研究再产出"
+        },
+        {
+          "id": "C",
+          "label": "视任务而定并说明条件"
+        }
+      ],
+      "reportUse": "工作方式类型、解释文本",
+      "required": true,
+      "sourceLine": 101,
+      "sourceText": "两个描述中选更像你的一个：A先快速产出再迭代；B先充分研究再产出；C视任务而定并说明条件",
+      "text": "两个描述中选更像你的一个：A先快速产出再迭代；B先充分研究再产出；C视任务而定并说明条件",
+      "type": "compound"
+    },
+    {
+      "dimension": "综合行为证据",
+      "evidenceRule": "不计语言表达分；缺结果标待验证",
+      "fields": [
+        {
+          "id": "status",
+          "options": [
+            {
+              "id": "has_experience",
+              "label": "有相关经历"
+            },
+            {
+              "id": "no_experience",
+              "label": "暂无相关经历"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        },
+        {
+          "combinedLength": {
+            "fields": [
+              "goal",
+              "action",
+              "result"
+            ],
+            "max": 200,
+            "min": 100
+          },
+          "condition": {
+            "equals": "has_experience",
+            "field": "status"
+          },
+          "id": "goal",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "condition": {
+            "equals": "has_experience",
+            "field": "status"
+          },
+          "id": "action",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "condition": {
+            "equals": "has_experience",
+            "field": "status"
+          },
+          "id": "result",
+          "missingMeaning": "pending_verification",
+          "required": false,
+          "type": "text"
+        }
+      ],
+      "id": "Q37",
+      "options": [],
+      "reportUse": "生成“已有牌/待补牌”、支持报告引用",
+      "required": true,
+      "sourceLine": 102,
+      "sourceText": "真实项目证据题：目标是什么？你具体做了什么？结果怎样？（结构化填写，100—200字）",
+      "text": "真实项目证据题：目标是什么？你具体做了什么？结果怎样？（结构化填写，100—200字）",
+      "type": "compound"
+    },
+    {
+      "dimension": "用户目标",
+      "evidenceRule": "不计能力分；用于个性化Match",
+      "fields": [
+        {
+          "id": "target",
+          "options": [
+            {
+              "id": "T1",
+              "label": "内容生产"
+            },
+            {
+              "id": "T2",
+              "label": "用户增长"
+            },
+            {
+              "id": "T3",
+              "label": "需求分析"
+            },
+            {
+              "id": "T4",
+              "label": "项目推进"
+            },
+            {
+              "id": "T5",
+              "label": "数据分析"
+            },
+            {
+              "id": "T6",
+              "label": "客户沟通"
+            },
+            {
+              "id": "T7",
+              "label": "其他"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        },
+        {
+          "id": "reason",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "id": "Q38",
+      "options": [
+        {
+          "id": "T1",
+          "label": "内容生产"
+        },
+        {
+          "id": "T2",
+          "label": "用户增长"
+        },
+        {
+          "id": "T3",
+          "label": "需求分析"
+        },
+        {
+          "id": "T4",
+          "label": "项目推进"
+        },
+        {
+          "id": "T5",
+          "label": "数据分析"
+        },
+        {
+          "id": "T6",
+          "label": "客户沟通"
+        },
+        {
+          "id": "T7",
+          "label": "其他"
+        }
+      ],
+      "reportUse": "冲/稳/保路径和验证任务",
+      "required": true,
+      "sourceLine": 103,
+      "sourceText": "目标岗位校准题：你当前最想验证哪个岗位任务？单选+补充原因：内容生产/用户增长/需求分析/项目推进/数据分析/客户沟通/其他",
+      "text": "目标岗位校准题：你当前最想验证哪个岗位任务？单选+补充原因：内容生产/用户增长/需求分析/项目推进/数据分析/客户沟通/其他",
+      "type": "compound"
+    },
+    {
+      "dimension": "用户质疑入口",
+      "evidenceRule": "不计分；质疑触发证据/规则复核，不自动降能力或置信度",
+      "fields": [
+        {
+          "id": "text",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "id": "audio",
+          "required": false,
+          "status": "pending_implementation",
+          "type": "audio"
+        }
+      ],
+      "id": "Q39",
+      "options": [],
+      "reportUse": "解释边界、人工复核与产品信任",
+      "required": false,
+      "sourceLine": 104,
+      "sourceText": "反向质疑题：报告最容易误判你的地方是什么？文字或语音二选一，可跳过",
+      "text": "反向质疑题：报告最容易误判你的地方是什么？文字或语音二选一，可跳过",
+      "type": "compound"
+    },
+    {
+      "dimension": "反迎合/一致性",
+      "evidenceRule": "与Q07情境不同；差异不直接判矛盾、不诚实或扣分；同一事实互斥才建冲突组",
+      "fields": [
+        {
+          "id": "choice",
+          "options": [
+            {
+              "id": "A",
+              "label": "先澄清目标"
+            },
+            {
+              "id": "B",
+              "label": "先做小版本"
+            },
+            {
+              "id": "C",
+              "label": "先找案例"
+            },
+            {
+              "id": "D",
+              "label": "等指令"
+            }
+          ],
+          "required": true,
+          "type": "single"
+        }
+      ],
+      "id": "Q40",
+      "options": [
+        {
+          "id": "A",
+          "label": "先澄清目标"
+        },
+        {
+          "id": "B",
+          "label": "先做小版本"
+        },
+        {
+          "id": "C",
+          "label": "先找案例"
+        },
+        {
+          "id": "D",
+          "label": "等指令"
+        }
+      ],
+      "reportUse": "答题质量标记，不直接改变人才类型",
+      "required": true,
+      "sourceLine": 105,
+      "sourceText": "一致性校验：再次遇到“目标模糊但期限很短”的任务，你第一步会？单选：A先澄清目标；B先做小版本；C先找案例；D等指令",
+      "text": "一致性校验：再次遇到“目标模糊但期限很短”的任务，你第一步会？单选：A先澄清目标；B先做小版本；C先找案例；D等指令",
+      "type": "single"
+    }
+  ]
+}

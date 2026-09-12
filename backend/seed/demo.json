@@ -1,0 +1,1681 @@
+{
+  "metadata": {
+    "mode": "demo",
+    "expertConfirmed": false,
+    "synthetic": true
+  },
+  "dimensions": [
+    {
+      "id": "demo-analysis",
+      "name": "分析"
+    },
+    {
+      "id": "demo-communication",
+      "name": "沟通"
+    },
+    {
+      "id": "demo-execution",
+      "name": "执行"
+    },
+    {
+      "id": "demo-learning",
+      "name": "学习"
+    },
+    {
+      "id": "demo-creativity",
+      "name": "创造"
+    },
+    {
+      "id": "demo-collaboration",
+      "name": "协作"
+    }
+  ],
+  "rules": {
+    "demo": true,
+    "notice": "Synthetic rules for workflow demonstration only.",
+    "scoreRange": [
+      0,
+      100
+    ],
+    "scoringAnchors": [
+      {
+        "id": "demo-anchor-demo-Q01",
+        "questionId": "demo-Q01",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q02",
+        "questionId": "demo-Q02",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q03",
+        "questionId": "demo-Q03",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q04",
+        "questionId": "demo-Q04",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q05",
+        "questionId": "demo-Q05",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q06",
+        "questionId": "demo-Q06",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q07",
+        "questionId": "demo-Q07",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q08",
+        "questionId": "demo-Q08",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q09",
+        "questionId": "demo-Q09",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q10",
+        "questionId": "demo-Q10",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q11",
+        "questionId": "demo-Q11",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q12",
+        "questionId": "demo-Q12",
+        "method": "linear_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q13",
+        "questionId": "demo-Q13",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q14",
+        "questionId": "demo-Q14",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q15",
+        "questionId": "demo-Q15",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q16",
+        "questionId": "demo-Q16",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q17",
+        "questionId": "demo-Q17",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q18",
+        "questionId": "demo-Q18",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q19",
+        "questionId": "demo-Q19",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q20",
+        "questionId": "demo-Q20",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q21",
+        "questionId": "demo-Q21",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q22",
+        "questionId": "demo-Q22",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q23",
+        "questionId": "demo-Q23",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q24",
+        "questionId": "demo-Q24",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q25",
+        "questionId": "demo-Q25",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q26",
+        "questionId": "demo-Q26",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q27",
+        "questionId": "demo-Q27",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q28",
+        "questionId": "demo-Q28",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q29",
+        "questionId": "demo-Q29",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q30",
+        "questionId": "demo-Q30",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q31",
+        "questionId": "demo-Q31",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q32",
+        "questionId": "demo-Q32",
+        "method": "option_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q33",
+        "questionId": "demo-Q33",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q34",
+        "questionId": "demo-Q34",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q35",
+        "questionId": "demo-Q35",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q36",
+        "questionId": "demo-Q36",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q37",
+        "questionId": "demo-Q37",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q38",
+        "questionId": "demo-Q38",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q39",
+        "questionId": "demo-Q39",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "demo-anchor-demo-Q40",
+        "questionId": "demo-Q40",
+        "method": "presence_demo",
+        "range": [
+          0,
+          100
+        ],
+        "synthetic": true
+      }
+    ]
+  },
+  "jobTemplates": [
+    {
+      "id": "demo-job-analyst",
+      "name": "演示数据分析岗",
+      "tasks": [
+        "整理数据",
+        "说明发现"
+      ],
+      "hardRequirements": [],
+      "capabilities": [
+        "demo-analysis"
+      ],
+      "scenarios": [
+        "结构化问题"
+      ],
+      "trend": {
+        "text": "仅为演示文本",
+        "asOf": null
+      },
+      "constraints": []
+    },
+    {
+      "id": "demo-job-coordinator",
+      "name": "演示项目协调岗",
+      "tasks": [
+        "跟踪事项",
+        "同步进展"
+      ],
+      "hardRequirements": [],
+      "capabilities": [
+        "demo-execution",
+        "demo-collaboration"
+      ],
+      "scenarios": [
+        "多人协作"
+      ],
+      "trend": {
+        "text": "仅为演示文本",
+        "asOf": null
+      },
+      "constraints": []
+    },
+    {
+      "id": "demo-job-content",
+      "name": "演示内容策划岗",
+      "tasks": [
+        "形成方案",
+        "迭代表达"
+      ],
+      "hardRequirements": [],
+      "capabilities": [
+        "demo-creativity",
+        "demo-communication"
+      ],
+      "scenarios": [
+        "开放问题"
+      ],
+      "trend": {
+        "text": "仅为演示文本",
+        "asOf": null
+      },
+      "constraints": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "demo-Q01",
+      "type": "scale",
+      "text": "演示题：我会先拆解复杂问题。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q02",
+      "type": "scale",
+      "text": "演示题：我能清楚说明自己的判断。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q03",
+      "type": "scale",
+      "text": "演示题：我会持续跟进承诺事项。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q04",
+      "type": "scale",
+      "text": "演示题：遇到陌生主题我愿意学习。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q05",
+      "type": "scale",
+      "text": "演示题：我常提出不同的解决思路。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity"
+      ]
+    },
+    {
+      "id": "demo-Q06",
+      "type": "scale",
+      "text": "演示题：我会主动了解队友需要。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q07",
+      "type": "scale",
+      "text": "演示题：信息不完整时我会标记未知。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q08",
+      "type": "scale",
+      "text": "演示题：表达前我会考虑听众。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q09",
+      "type": "scale",
+      "text": "演示题：我容易忘记检查进度。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": true,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q10",
+      "type": "scale",
+      "text": "演示题：我会复盘新方法是否有效。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q11",
+      "type": "scale",
+      "text": "演示题：我愿意试验低成本的新做法。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity"
+      ]
+    },
+    {
+      "id": "demo-Q12",
+      "type": "scale",
+      "text": "演示题：分歧时我会寻找共同目标。",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "weight": 0.8,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q13",
+      "type": "single",
+      "text": "演示题：面对含糊任务，你通常先做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "clarify",
+          "label": "澄清目标"
+        },
+        {
+          "id": "start",
+          "label": "直接开始"
+        },
+        {
+          "id": "observe",
+          "label": "先观察"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q14",
+      "type": "single",
+      "text": "演示题：汇报时你最关注什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "audience",
+          "label": "听众需要"
+        },
+        {
+          "id": "detail",
+          "label": "全部细节"
+        },
+        {
+          "id": "speed",
+          "label": "尽快结束"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q15",
+      "type": "single",
+      "text": "演示题：计划延迟时你倾向怎么做？",
+      "required": true,
+      "options": [
+        {
+          "id": "adjust",
+          "label": "调整并同步"
+        },
+        {
+          "id": "wait",
+          "label": "继续等待"
+        },
+        {
+          "id": "hide",
+          "label": "暂不说明"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q16",
+      "type": "single",
+      "text": "演示题：学习新工具时你先做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "practice",
+          "label": "小任务练习"
+        },
+        {
+          "id": "read",
+          "label": "阅读材料"
+        },
+        {
+          "id": "avoid",
+          "label": "暂时回避"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q17",
+      "type": "single",
+      "text": "演示题：方案受阻时你倾向怎么做？",
+      "required": true,
+      "options": [
+        {
+          "id": "alternatives",
+          "label": "寻找替代方案"
+        },
+        {
+          "id": "repeat",
+          "label": "重复原方案"
+        },
+        {
+          "id": "stop",
+          "label": "停止尝试"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity"
+      ]
+    },
+    {
+      "id": "demo-Q18",
+      "type": "single",
+      "text": "演示题：队友意见不同时你先做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "listen",
+          "label": "了解依据"
+        },
+        {
+          "id": "argue",
+          "label": "坚持自己"
+        },
+        {
+          "id": "leave",
+          "label": "退出讨论"
+        }
+      ],
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q19",
+      "type": "single",
+      "text": "演示题：数据矛盾时你如何处理？",
+      "required": true,
+      "options": [
+        {
+          "id": "verify",
+          "label": "核对来源"
+        },
+        {
+          "id": "choose",
+          "label": "任选一个"
+        },
+        {
+          "id": "average",
+          "label": "直接平均"
+        }
+      ],
+      "weight": 0.7,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q20",
+      "type": "single",
+      "text": "演示题：对方未理解时你如何处理？",
+      "required": true,
+      "options": [
+        {
+          "id": "reframe",
+          "label": "换种表达"
+        },
+        {
+          "id": "repeat",
+          "label": "重复原话"
+        },
+        {
+          "id": "skip",
+          "label": "跳过"
+        }
+      ],
+      "weight": 0.7,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q21",
+      "type": "single",
+      "text": "演示题：任务很多时你如何推进？",
+      "required": true,
+      "options": [
+        {
+          "id": "prioritize",
+          "label": "排序推进"
+        },
+        {
+          "id": "random",
+          "label": "随机处理"
+        },
+        {
+          "id": "delay",
+          "label": "全部延后"
+        }
+      ],
+      "weight": 0.7,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q22",
+      "type": "single",
+      "text": "演示题：反馈指出错误时你如何做？",
+      "required": true,
+      "options": [
+        {
+          "id": "correct",
+          "label": "验证并修正"
+        },
+        {
+          "id": "defend",
+          "label": "立即辩解"
+        },
+        {
+          "id": "ignore",
+          "label": "忽略"
+        }
+      ],
+      "weight": 0.7,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q23",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式分析问题？",
+      "required": true,
+      "options": [
+        {
+          "id": "breakdown",
+          "label": "拆分"
+        },
+        {
+          "id": "compare",
+          "label": "比较"
+        },
+        {
+          "id": "verify",
+          "label": "验证"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q24",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式改善表达？",
+      "required": true,
+      "options": [
+        {
+          "id": "examples",
+          "label": "举例"
+        },
+        {
+          "id": "structure",
+          "label": "结构化"
+        },
+        {
+          "id": "questions",
+          "label": "确认理解"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q25",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式确保执行？",
+      "required": true,
+      "options": [
+        {
+          "id": "deadline",
+          "label": "期限"
+        },
+        {
+          "id": "checklist",
+          "label": "清单"
+        },
+        {
+          "id": "review",
+          "label": "复查"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q26",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式学习？",
+      "required": true,
+      "options": [
+        {
+          "id": "practice",
+          "label": "实践"
+        },
+        {
+          "id": "feedback",
+          "label": "反馈"
+        },
+        {
+          "id": "notes",
+          "label": "笔记"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q27",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式产生想法？",
+      "required": true,
+      "options": [
+        {
+          "id": "analogy",
+          "label": "类比"
+        },
+        {
+          "id": "brainstorm",
+          "label": "发散"
+        },
+        {
+          "id": "prototype",
+          "label": "原型"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity"
+      ]
+    },
+    {
+      "id": "demo-Q28",
+      "type": "multiple",
+      "text": "演示题：你会用哪些方式协作？",
+      "required": true,
+      "options": [
+        {
+          "id": "roles",
+          "label": "明确角色"
+        },
+        {
+          "id": "sync",
+          "label": "同步"
+        },
+        {
+          "id": "support",
+          "label": "互相支持"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q29",
+      "type": "multiple",
+      "text": "演示题：判断可靠性时会看什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "source",
+          "label": "来源"
+        },
+        {
+          "id": "date",
+          "label": "日期"
+        },
+        {
+          "id": "sample",
+          "label": "样本"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 0.6,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis",
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q30",
+      "type": "multiple",
+      "text": "演示题：推进跨组事项会做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "owner",
+          "label": "明确负责人"
+        },
+        {
+          "id": "risk",
+          "label": "说明风险"
+        },
+        {
+          "id": "record",
+          "label": "保留记录"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 0.6,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution",
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q31",
+      "type": "multiple",
+      "text": "演示题：完善创意时会做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "test",
+          "label": "测试"
+        },
+        {
+          "id": "explain",
+          "label": "讲给他人"
+        },
+        {
+          "id": "revise",
+          "label": "修改"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 0.6,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity",
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q32",
+      "type": "multiple",
+      "text": "演示题：面对反馈会做什么？",
+      "required": true,
+      "options": [
+        {
+          "id": "ask",
+          "label": "追问例子"
+        },
+        {
+          "id": "plan",
+          "label": "制定调整"
+        },
+        {
+          "id": "follow",
+          "label": "跟踪效果"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 3,
+      "weight": 0.6,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning",
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q33",
+      "type": "experience",
+      "text": "演示题：描述一次你拆解复杂问题的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis"
+      ]
+    },
+    {
+      "id": "demo-Q34",
+      "type": "experience",
+      "text": "演示题：描述一次你改善沟通的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-communication"
+      ]
+    },
+    {
+      "id": "demo-Q35",
+      "type": "experience",
+      "text": "演示题：描述一次你按计划交付的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-Q36",
+      "type": "experience",
+      "text": "演示题：描述一次你快速学习的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q37",
+      "type": "experience",
+      "text": "演示题：描述一次你提出新方案的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-creativity"
+      ]
+    },
+    {
+      "id": "demo-Q38",
+      "type": "experience",
+      "text": "演示题：描述一次你促进协作的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 1,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-collaboration"
+      ]
+    },
+    {
+      "id": "demo-Q39",
+      "type": "experience",
+      "text": "演示题：描述一次结果不确定的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 0.5,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-analysis",
+        "demo-learning"
+      ]
+    },
+    {
+      "id": "demo-Q40",
+      "type": "experience",
+      "text": "演示题：描述一次你调整行动方案的经历。",
+      "required": false,
+      "maxLength": 500,
+      "weight": 0.5,
+      "reverse": false,
+      "dimensionIds": [
+        "demo-execution",
+        "demo-creativity"
+      ]
+    }
+  ],
+  "talentTypes": [
+    {
+      "id": "demo-type-structured",
+      "name": "演示结构推进型",
+      "summary": "仅用于展示分类流程的合成类型。",
+      "dimensionIds": [
+        "demo-analysis",
+        "demo-execution"
+      ]
+    },
+    {
+      "id": "demo-type-exploratory",
+      "name": "演示探索协作型",
+      "summary": "仅用于展示分类流程的合成类型。",
+      "dimensionIds": [
+        "demo-creativity",
+        "demo-collaboration"
+      ]
+    }
+  ],
+  "sampleAnswers": [
+    {
+      "ownerId": "demo-user-a",
+      "synthetic": true,
+      "answers": [
+        {
+          "questionId": "demo-Q01",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q02",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q03",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q04",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q05",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q06",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q07",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q08",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q09",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q10",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q11",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q12",
+          "value": 4
+        },
+        {
+          "questionId": "demo-Q13",
+          "value": "clarify"
+        },
+        {
+          "questionId": "demo-Q14",
+          "value": "audience"
+        },
+        {
+          "questionId": "demo-Q15",
+          "value": "adjust"
+        },
+        {
+          "questionId": "demo-Q16",
+          "value": "practice"
+        },
+        {
+          "questionId": "demo-Q17",
+          "value": "alternatives"
+        },
+        {
+          "questionId": "demo-Q18",
+          "value": "listen"
+        },
+        {
+          "questionId": "demo-Q19",
+          "value": "verify"
+        },
+        {
+          "questionId": "demo-Q20",
+          "value": "reframe"
+        },
+        {
+          "questionId": "demo-Q21",
+          "value": "prioritize"
+        },
+        {
+          "questionId": "demo-Q22",
+          "value": "correct"
+        },
+        {
+          "questionId": "demo-Q23",
+          "value": [
+            "breakdown"
+          ]
+        },
+        {
+          "questionId": "demo-Q24",
+          "value": [
+            "examples"
+          ]
+        },
+        {
+          "questionId": "demo-Q25",
+          "value": [
+            "deadline"
+          ]
+        },
+        {
+          "questionId": "demo-Q26",
+          "value": [
+            "practice"
+          ]
+        },
+        {
+          "questionId": "demo-Q27",
+          "value": [
+            "analogy"
+          ]
+        },
+        {
+          "questionId": "demo-Q28",
+          "value": [
+            "roles"
+          ]
+        },
+        {
+          "questionId": "demo-Q29",
+          "value": [
+            "source"
+          ]
+        },
+        {
+          "questionId": "demo-Q30",
+          "value": [
+            "owner"
+          ]
+        },
+        {
+          "questionId": "demo-Q31",
+          "value": [
+            "test"
+          ]
+        },
+        {
+          "questionId": "demo-Q32",
+          "value": [
+            "ask"
+          ]
+        },
+        {
+          "questionId": "demo-Q33",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q34",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q35",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q36",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q37",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q38",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q39",
+          "value": "演示用户A的合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q40",
+          "value": "演示用户A的合成经历回答。"
+        }
+      ]
+    },
+    {
+      "ownerId": "demo-user-b",
+      "synthetic": true,
+      "answers": [
+        {
+          "questionId": "demo-Q01",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q02",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q03",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q04",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q05",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q06",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q07",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q08",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q09",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q10",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q11",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q12",
+          "value": 2
+        },
+        {
+          "questionId": "demo-Q13",
+          "value": "observe"
+        },
+        {
+          "questionId": "demo-Q14",
+          "value": "speed"
+        },
+        {
+          "questionId": "demo-Q15",
+          "value": "hide"
+        },
+        {
+          "questionId": "demo-Q16",
+          "value": "avoid"
+        },
+        {
+          "questionId": "demo-Q17",
+          "value": "stop"
+        },
+        {
+          "questionId": "demo-Q18",
+          "value": "leave"
+        },
+        {
+          "questionId": "demo-Q19",
+          "value": "average"
+        },
+        {
+          "questionId": "demo-Q20",
+          "value": "skip"
+        },
+        {
+          "questionId": "demo-Q21",
+          "value": "delay"
+        },
+        {
+          "questionId": "demo-Q22",
+          "value": "ignore"
+        },
+        {
+          "questionId": "demo-Q23",
+          "value": [
+            "verify"
+          ]
+        },
+        {
+          "questionId": "demo-Q24",
+          "value": [
+            "questions"
+          ]
+        },
+        {
+          "questionId": "demo-Q25",
+          "value": [
+            "review"
+          ]
+        },
+        {
+          "questionId": "demo-Q26",
+          "value": [
+            "notes"
+          ]
+        },
+        {
+          "questionId": "demo-Q27",
+          "value": [
+            "prototype"
+          ]
+        },
+        {
+          "questionId": "demo-Q28",
+          "value": [
+            "support"
+          ]
+        },
+        {
+          "questionId": "demo-Q29",
+          "value": [
+            "sample"
+          ]
+        },
+        {
+          "questionId": "demo-Q30",
+          "value": [
+            "record"
+          ]
+        },
+        {
+          "questionId": "demo-Q31",
+          "value": [
+            "revise"
+          ]
+        },
+        {
+          "questionId": "demo-Q32",
+          "value": [
+            "follow"
+          ]
+        },
+        {
+          "questionId": "demo-Q33",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q34",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q35",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q36",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q37",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q38",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q39",
+          "value": "演示用户B的另一组合成经历回答。"
+        },
+        {
+          "questionId": "demo-Q40",
+          "value": "演示用户B的另一组合成经历回答。"
+        }
+      ]
+    }
+  ]
+}
