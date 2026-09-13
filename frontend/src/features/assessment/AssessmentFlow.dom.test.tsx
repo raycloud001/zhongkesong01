@@ -21,6 +21,161 @@ describe('AssessmentFlow lifecycle',()=>{
     render(<AssessmentFlow/>);
     expect(await screen.findByText('1. 题1')).toBeTruthy();
     expect(fetchMock.mock.calls.some(([url])=>String(url).endsWith('/identity/anonymous'))).toBe(true);
+    const progress=screen.getByRole('progressbar',{name:'答题进度'});
+    expect(progress.getAttribute('aria-valuemin')).toBe('0');
+    expect(progress.getAttribute('aria-valuemax')).toBe('100');
+    expect(progress.getAttribute('aria-valuenow')).toBe('0');
+  });
+
+  it('keeps inline option text out of the stem and advances after selection feedback', async()=>{
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'哪类任务最容易让你进入状态？单选：A深入研究；B创作表达',required:true,options:[{id:'A',label:'深入研究'},{id:'B',label:'创作表达'}]}
+      : question);
+    vi.spyOn(globalThis,'fetch').mockImplementation((url)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    expect(await screen.findByRole('heading',{name:'1. 哪类任务最容易让你进入状态？'})).toBeTruthy();
+    expect(screen.queryByText(/单选：A深入研究/)).toBeNull();
+
+    const radio=screen.getByRole('radio',{name:/深入研究/});
+    const card=radio.closest('label') as HTMLElement;
+    fireEvent.click(radio);
+    expect(card.className).toContain('selection-animating');
+    expect(screen.getByRole('heading',{name:'1. 哪类任务最容易让你进入状态？'})).toBeTruthy();
+    await waitFor(()=>expect(screen.getByRole('heading',{name:'2. 题2'})).toBeTruthy(),{timeout:1000});
+  });
+
+  it('does not auto-advance a multiple-choice question after one selection', async()=>{
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'multiple' as const,text:'你更看重工作的哪两项？多选：A结果；B成长',required:true,minSelections:1,maxSelections:2,options:[{id:'A',label:'结果'},{id:'B',label:'成长'}]}
+      : question);
+    vi.spyOn(globalThis,'fetch').mockImplementation((url)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    const heading=await screen.findByRole('heading',{name:'1. 你更看重工作的哪两项？'});
+    const checkbox=screen.getByRole('checkbox',{name:'结果'});
+    const card=checkbox.closest('label') as HTMLElement;
+    fireEvent.click(checkbox);
+    expect(card.className).toContain('selection-animating');
+    await new Promise(resolve=>setTimeout(resolve,350));
+    expect(screen.getByRole('heading',{name:'1. 你更看重工作的哪两项？'})).toBe(heading);
+  });
+
+  it('cancels a pending automatic advance when navigation is used manually', async()=>{
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'第一题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+      : index===1
+        ? {id:'q2',type:'single' as const,text:'第二题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+        : question);
+    vi.spyOn(globalThis,'fetch').mockImplementation((url)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    fireEvent.click(await screen.findByRole('radio',{name:'选项A'}));
+    fireEvent.click(screen.getByRole('button',{name:'下一题'}));
+    expect(screen.getByRole('radio',{name:'选项A'}).closest('label')?.className).not.toContain('selection-animating');
+    await new Promise(resolve=>setTimeout(resolve,350));
+    expect(screen.getByRole('heading',{name:'2. 第二题？'})).toBeTruthy();
+  });
+
+  it('emits one question-view event when automatic advance completes', async()=>{
+    const eventBodies:Record<string,unknown>[]=[];
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'第一题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+      : question);
+    vi.spyOn(globalThis,'fetch').mockImplementation((url,init)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      if(path.endsWith('/events')){eventBodies.push(JSON.parse(String(init?.body)));return response({},204);}
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    fireEvent.click(await screen.findByRole('radio',{name:'选项A'}));
+    await waitFor(()=>expect(screen.getByRole('heading',{name:'2. 题2'})).toBeTruthy(),{timeout:1000});
+    expect(eventBodies.filter(event=>event.eventType==='question_view'&&((event.metadata as Record<string,string>).questionId==='q2'))).toHaveLength(1);
+  });
+
+  it('moves keyboard focus to the new question after automatic advance', async()=>{
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'第一题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+      : question);
+    vi.spyOn(globalThis,'fetch').mockImplementation((url)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    fireEvent.click(await screen.findByRole('radio',{name:'选项A'}));
+    const heading=await screen.findByRole('heading',{name:'2. 题2'});
+    expect(document.activeElement).toBe(heading);
+  });
+
+  it('cancels automatic advance when submitting before the feedback delay ends', async()=>{
+    const eventBodies:Record<string,unknown>[]=[];
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'第一题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+      : {...question,required:false});
+    vi.spyOn(globalThis,'fetch').mockImplementation((url,init)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      if(path.endsWith('/submit'))return response({jobId:'job-1'});
+      if(path.endsWith('/events')){eventBodies.push(JSON.parse(String(init?.body)));return response({},204);}
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    fireEvent.click(await screen.findByRole('radio',{name:'选项A'}));
+    fireEvent.click(screen.getByRole('button',{name:'提交并进入生成队列'}));
+    expect(await screen.findByText('任务编号：job-1')).toBeTruthy();
+    await new Promise(resolve=>setTimeout(resolve,350));
+    expect(screen.queryByRole('heading',{name:'2. 题2'})).toBeNull();
+    expect(eventBodies.filter(event=>event.eventType==='question_view'&&((event.metadata as Record<string,string>).questionId==='q2'))).toHaveLength(0);
+  });
+
+  it('locks the assessment while submission is pending', async()=>{
+    let resolveSubmit:(value:Response)=>void=()=>{};
+    const pendingSubmit=new Promise<Response>(resolve=>{resolveSubmit=resolve;});
+    let submitCalls=0;
+    const optionQuestions=questions.map((question,index)=>index===0
+      ? {id:'q1',type:'single' as const,text:'第一题？单选：A选项A；B选项B',required:true,options:[{id:'A',label:'选项A'},{id:'B',label:'选项B'}]}
+      : {...question,required:false});
+    vi.spyOn(globalThis,'fetch').mockImplementation((url)=>{
+      const path=String(url);
+      if(path.endsWith('/identity/anonymous'))return response({ownerId:'owner-1',csrfToken:'csrf'});
+      if(path.includes('/sessions/current'))return response({session:{id:'s1',revision:0,status:'draft',questions:optionQuestions,answers:[],demo:false}});
+      if(path.includes('/answers/'))return response({revision:1,answeredCount:1});
+      if(path.endsWith('/submit')){submitCalls+=1;return pendingSubmit;}
+      return response({},204);
+    });
+    render(<AssessmentFlow/>);
+    fireEvent.click(await screen.findByRole('radio',{name:'选项A'}));
+    fireEvent.click(screen.getByRole('button',{name:'提交并进入生成队列'}));
+    await waitFor(()=>expect(submitCalls).toBe(1));
+    expect((screen.getByRole('radio',{name:'选项A'}) as HTMLInputElement).disabled).toBe(true);
+    expect((screen.getByRole('button',{name:'下一题'}) as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.click(screen.getByRole('button',{name:'提交并进入生成队列'}));
+    expect(submitCalls).toBe(1);
+    resolveSubmit(new Response(JSON.stringify({jobId:'job-1'}),{status:200,headers:{'Content-Type':'application/json'}}));
+    expect(await screen.findByText('任务编号：job-1')).toBeTruthy();
   });
 
   it('restores local unsaved data and serializes quick saves without losing the latest edit',async()=>{
