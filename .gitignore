@@ -10,3 +10,8 @@ __pycache__/
 *.db
 .superpowers/
 .DS_Store
+
+# Internal agent/deployment work products; keep them out of the product repo
+docs/superpowers/
+ms-studio-deploy/
+frontend/src/features/report/DemoReport.tsx
